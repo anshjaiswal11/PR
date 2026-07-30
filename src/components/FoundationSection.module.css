@@ -1,0 +1,163 @@
+.section {
+  background: #ffffff;
+  padding: 72px 52px 56px;
+}
+
+/* Header */
+.header { margin-bottom: 44px; }
+
+.title {
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 900;
+  color: #0d1b35;
+}
+
+.titleSub {
+  font-size: clamp(20px, 3vw, 34px);
+  font-weight: 400;
+  color: #6b7b99;
+}
+
+/* Steps grid: 5 columns */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0;
+  margin-bottom: 52px;
+}
+
+.phaseCol {
+  padding: 0 20px 0 0;
+  border-right: 1px solid rgba(0,0,0,0.08);
+  padding-right: 24px;
+}
+.phaseCol:last-child { border-right: none; }
+.phaseCol:not(:first-child) { padding-left: 24px; }
+
+/* Circle number */
+.circleNum {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 16px rgba(245,166,35,0.35);
+}
+
+/* Phase divider line */
+.phaseLine {
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+  transform-origin: left;
+  margin-bottom: 14px;
+  width: 100%;
+}
+
+.phaseTitle {
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #0d1b35;
+  margin-bottom: 14px;
+  line-height: 1.3;
+}
+
+.phaseList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.phaseList li {
+  font-size: 11.5px;
+  color: #4a5a70;
+  line-height: 1.5;
+  padding-left: 10px;
+  position: relative;
+}
+
+.phaseList li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #8899b4;
+  font-size: 10px;
+}
+
+/* Divider */
+.divider {
+  height: 1px;
+  background: rgba(0,0,0,0.1);
+  margin-bottom: 32px;
+  transform-origin: left;
+}
+
+/* Deliverables */
+.delivTitle {
+  font-size: 18px;
+  font-weight: 800;
+  color: #0d1b35;
+  margin-bottom: 18px;
+}
+
+.delivGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.delivCard {
+  background: #f4f6fb;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  padding: 14px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0d1b35;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: default;
+  transition: all 0.2s ease;
+}
+
+.checkIcon {
+  color: var(--gold);
+  font-size: 16px;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+/* Quote */
+.quote {
+  font-size: 13px;
+  color: #8899b4;
+  text-align: center;
+  font-style: italic;
+}
+
+/* Mobile */
+@media (max-width: 1000px) {
+  .stepsGrid { grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .phaseCol { border-right: none; padding: 0 0 20px; border-bottom: 1px solid rgba(0,0,0,0.08); }
+  .phaseCol:last-child { border-bottom: none; }
+}
+
+@media (max-width: 700px) {
+  .section { padding: 52px 20px; }
+  .stepsGrid { grid-template-columns: 1fr 1fr; }
+  .delivGrid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 480px) {
+  .stepsGrid { grid-template-columns: 1fr; }
+  .delivGrid { grid-template-columns: 1fr; }
+}

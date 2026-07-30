@@ -8,24 +8,36 @@ import ServicesSection from './components/ServicesSection'
 import InitiativesSection from './components/InitiativesSection'
 import ContentSection from './components/ContentSection'
 import RoadmapSection from './components/RoadmapSection'
+import FoundationSection from './components/FoundationSection'
+import AnalyticsSection from './components/AnalyticsSection'
+import WhyChooseSection from './components/WhyChooseSection'
+import PricingSection from './components/PricingSection'
+import ImpactSection from './components/ImpactSection'
 import './App.css'
 
 function App() {
   return (
     <main>
-      {/* ── Original 5 sections ── */}
+      {/* ── Batch 1: Original 5 ── */}
       <HeroSection />
       <WhyPRSection />
       <RealitySection />
       <ChallengesSection />
       <DashboardSection />
 
-      {/* ── New 5 sections ── */}
+      {/* ── Batch 2: New 5 ── */}
       <ApproachSection />
       <ServicesSection />
       <InitiativesSection />
       <ContentSection />
       <RoadmapSection />
+
+      {/* ── Batch 3: New 5 ── */}
+      <FoundationSection />
+      <AnalyticsSection />
+      <WhyChooseSection />
+      <PricingSection />
+      <ImpactSection />
     </main>
   )
 }
