@@ -19,11 +19,21 @@
 .bgImage {
   position: absolute;
   inset: -8%;
-  background-image: url('/hero_city_bg.jpg');
+  background-image: url('/indian_flag_hero.jpg');
   background-size: cover;
-  background-position: center 30%;
+  background-position: center center;
   will-change: transform;
   transition: transform 0.05s linear;
+}
+
+/* Saffron stripe top accent */
+.bgImage::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: linear-gradient(90deg, #FF9933, #FF9933);
+  z-index: 1;
 }
 
 .bgGradient {
@@ -31,18 +41,51 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(7, 14, 31, 0.55) 0%,
-    rgba(7, 14, 31, 0.35) 25%,
-    rgba(7, 14, 31, 0.6)  55%,
-    rgba(7, 14, 31, 0.97) 100%
+    rgba(255, 153, 51, 0.18) 0%,
+    rgba(7, 14, 31, 0.55)    18%,
+    rgba(7, 14, 31, 0.45)    40%,
+    rgba(7, 14, 31, 0.72)    65%,
+    rgba(7, 14, 31, 0.97)    100%
   );
 }
 
 .bgVignette {
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse at center, transparent 40%, rgba(7, 14, 31, 0.6) 100%);
+  background: radial-gradient(ellipse at center, transparent 35%, rgba(7, 14, 31, 0.55) 100%);
 }
+
+/* Three-stripe flag color bar at top */
+.bgGradient::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #FF9933 33.3%, #ffffff 33.3% 66.6%, #138808 66.6%);
+}
+
+/* Tricolor top ribbon */
+.tricolorStripe {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  height: 8px;
+  width: 100%;
+}
+
+.stripeSaffron { flex: 1; background: #FF9933; }
+
+.stripeWhite {
+  flex: 1;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.miniChakra { display: block; }
+
+.stripeGreen { flex: 1; background: #138808; }
 
 /* Navbar */
 .navbar {

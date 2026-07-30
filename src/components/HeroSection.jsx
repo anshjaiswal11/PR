@@ -37,6 +37,25 @@ export default function HeroSection() {
         <div className={styles.bgVignette} />
       </div>
 
+      {/* Tricolor top stripe */}
+      <div className={styles.tricolorStripe} aria-hidden="true">
+        <div className={styles.stripeSaffron} />
+        <div className={styles.stripeWhite}>
+          {/* Mini Ashoka Chakra */}
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" className={styles.miniChakra}>
+            <circle cx="9" cy="9" r="8" stroke="#000080" strokeWidth="1.2" fill="none"/>
+            <circle cx="9" cy="9" r="1.5" fill="#000080"/>
+            {[...Array(24)].map((_, i) => {
+              const angle = (i * 15 * Math.PI) / 180
+              const x1 = 9 + 1.5 * Math.cos(angle), y1 = 9 + 1.5 * Math.sin(angle)
+              const x2 = 9 + 7 * Math.cos(angle), y2 = 9 + 7 * Math.sin(angle)
+              return <line key={i} x1={x1} y1={y1} x2={x2} y2={y2} stroke="#000080" strokeWidth="0.6"/>
+            })}
+          </svg>
+        </div>
+        <div className={styles.stripeGreen} />
+      </div>
+
       {/* Navbar */}
       <motion.header
         className={styles.navbar}

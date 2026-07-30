@@ -13,6 +13,9 @@ import AnalyticsSection from './components/AnalyticsSection'
 import WhyChooseSection from './components/WhyChooseSection'
 import PricingSection from './components/PricingSection'
 import ImpactSection from './components/ImpactSection'
+import CTASection from './components/CTASection'
+import StrategySection from './components/StrategySection'
+import BlueprintSection from './components/BlueprintSection'
 import './App.css'
 
 function App() {
@@ -38,6 +41,11 @@ function App() {
       <WhyChooseSection />
       <PricingSection />
       <ImpactSection />
+
+      {/* ── Batch 4: New 3 + CTA ── */}
+      <CTASection />
+      <StrategySection />
+      <BlueprintSection />
     </main>
   )
 }

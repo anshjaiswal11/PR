@@ -1,0 +1,114 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Stadium bg */
+.bgImage {
+  position: absolute;
+  inset: 0;
+  background-image: url('/stadium_cta_bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  opacity: 0.65;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.55) 0%,
+    rgba(0,0,0,0.3)  35%,
+    rgba(0,0,0,0.5)  65%,
+    rgba(0,0,0,0.85) 100%
+  );
+}
+
+/* Decorative corners */
+.cornerCircleTL {
+  position: absolute;
+  top: -60px; left: -60px;
+  width: 220px; height: 220px;
+  border-radius: 50%;
+  border: 40px solid rgba(255,153,51,0.06);
+  pointer-events: none;
+}
+.cornerCircleBR {
+  position: absolute;
+  bottom: -80px; right: -60px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 50px solid rgba(19,136,8,0.05);
+  pointer-events: none;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 80px 40px;
+  max-width: 900px;
+  text-align: center;
+}
+
+/* Red horizontal lines */
+.redLine {
+  width: 75%;
+  height: 4px;
+  background: var(--red);
+  border-radius: 2px;
+  transform-origin: center;
+}
+
+/* Gold title */
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(32px, 6.5vw, 78px);
+  font-weight: 900;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: 0.01em;
+  text-shadow: 0 4px 32px rgba(0,0,0,0.6);
+}
+
+/* Subtitle */
+.subtitle {
+  font-size: clamp(13px, 1.8vw, 15px);
+  color: rgba(255,255,255,0.8);
+  line-height: 1.65;
+  max-width: 580px;
+  font-weight: 500;
+}
+
+/* Button */
+.btnRow { margin-top: 8px; }
+
+.ctaBtn {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  font-size: 15px;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  box-shadow: 0 6px 24px rgba(204,0,0,0.35);
+  letter-spacing: 0.03em;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .content { padding: 60px 24px; gap: 18px; }
+  .redLine { width: 90%; }
+}
