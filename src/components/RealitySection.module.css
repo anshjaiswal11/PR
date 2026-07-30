@@ -1,0 +1,108 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  background: var(--navy);
+  overflow: hidden;
+}
+
+/* Photo side */
+.photoSide {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+}
+.photoSide:hover .photo { transform: scale(1.04); }
+
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, transparent 55%, var(--navy) 100%);
+  pointer-events: none;
+}
+
+/* Content side */
+.contentSide {
+  background: var(--navy);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 52px;
+  position: relative;
+}
+
+/* Red card */
+.redCard {
+  background: var(--red);
+  border-radius: 10px;
+  padding: 38px 34px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 12px 60px rgba(204, 0, 0, 0.35);
+}
+
+.redCard::before {
+  content: '';
+  position: absolute;
+  top: -50px; right: -50px;
+  width: 160px; height: 160px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+}
+
+.iconWrap { margin-bottom: 18px; }
+
+.cardTitle {
+  font-size: clamp(18px, 2.4vw, 26px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.25;
+  margin-bottom: 18px;
+}
+
+.cardBody {
+  font-size: 14.5px;
+  color: rgba(255,255,255,0.9);
+  line-height: 1.7;
+  margin-bottom: 26px;
+}
+
+.flowBadge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--navy-deep);
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 11px 20px;
+  border-radius: 5px;
+  line-height: 1.55;
+  text-align: center;
+  cursor: default;
+  transition: transform 0.2s;
+}
+
+.arrow {
+  position: absolute;
+  bottom: 44px; right: 52px;
+  font-size: 28px;
+  color: var(--white);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.arrow:hover { color: var(--gold); }
+
+/* Mobile */
+@media (max-width: 900px) {
+  .section { grid-template-columns: 1fr; min-height: auto; }
+  .photoSide { height: 310px; }
+  .photoOverlay { background: linear-gradient(to bottom, transparent 55%, var(--navy) 100%); }
+  .contentSide { padding: 40px 24px 64px; }
+  .arrow { bottom: 24px; right: 24px; }
+}

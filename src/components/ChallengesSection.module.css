@@ -1,0 +1,106 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  background: #f0f3f8;
+  overflow: hidden;
+}
+
+/* Photo */
+.photoSide {
+  position: relative;
+  overflow: hidden;
+  background: #dde4ef;
+}
+
+.photo {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.6s ease;
+  filter: contrast(1.04) saturate(0.9);
+}
+.photoSide:hover .photo { transform: scale(1.04); }
+
+.photoOverlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to right, transparent 50%, rgba(240,243,248,0.85) 100%);
+  pointer-events: none;
+}
+
+/* Content */
+.contentSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px 52px;
+  background: #f0f3f8;
+}
+
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 36px;
+}
+
+.title {
+  font-size: clamp(22px, 3vw, 36px);
+  font-weight: 900;
+  color: #0d1b35;
+  line-height: 1.15;
+  flex: 1;
+}
+
+.searchIconWrap { flex-shrink: 0; margin-top: 4px; }
+
+/* List */
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 8px;
+  border-bottom: 1px solid rgba(13, 27, 53, 0.13);
+  cursor: default;
+  border-radius: 5px;
+  transition: all 0.25s ease;
+}
+
+.item:first-child { border-top: 1px solid rgba(13, 27, 53, 0.13); }
+
+.label {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0d1b35;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+
+.dots {
+  flex: 1;
+  border-bottom: 2px dotted rgba(13, 27, 53, 0.22);
+  margin: 0 6px;
+}
+
+.num {
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(13, 27, 53, 0.35);
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  transition: color 0.2s;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .section { grid-template-columns: 1fr; min-height: auto; }
+  .photoSide { height: 320px; }
+  .photoOverlay { background: linear-gradient(to bottom, transparent 55%, rgba(240,243,248,0.9) 100%); }
+  .contentSide { padding: 40px 24px 56px; }
+}

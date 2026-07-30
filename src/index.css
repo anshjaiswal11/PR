@@ -1,0 +1,38 @@
+/* =========================================================
+   TheSocioMint – Global CSS
+   ========================================================= */
+*, *::before, *::after {
+  margin: 0; padding: 0; box-sizing: border-box;
+}
+
+:root {
+  --navy-deep:  #070e1f;
+  --navy:       #0d1b35;
+  --navy-mid:   #132040;
+  --navy-card:  #1a2d52;
+  --navy-light: #213561;
+  --red:        #cc0000;
+  --red-bright: #e60000;
+  --gold:       #f5a623;
+  --gold-bright:#ffb733;
+  --white:      #ffffff;
+  --gray-light: #c0cce0;
+  --gray-dim:   #8899b4;
+  --font-main:  'Inter', sans-serif;
+  --font-display: 'Barlow Condensed', sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--navy-deep);
+  color: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--navy-deep); }
+::-webkit-scrollbar-thumb { background: var(--navy-card); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--red); }
