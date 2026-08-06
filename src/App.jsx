@@ -44,8 +44,7 @@ function App() {
 
       {/* ── Batch 4: New 3 + CTA ── */}
       <CTASection />
-      <StrategySection />
-      <BlueprintSection />
+
     </main>
   )
 }
